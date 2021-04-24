@@ -1,4 +1,4 @@
-class MyPriorityQueue {
+public class MyPriorityQueue {
     ArrayList<Integer> arr = new ArrayList<>();
 
     public int size() {

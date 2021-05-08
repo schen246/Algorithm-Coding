@@ -4,6 +4,11 @@ public class MultiplyStrings {
         // - num1, num2 -> no leading zero
         // - character digit only 0-9
         // - non-negative
+        // example:
+        // 1 2 3
+        // 4 5 6
+        // i + j + 1: a[i] * b[j] + res[i + j + 1] -> cur -> cur % 10
+        // i + j: res[i + j] + cur / 10
         if (num1 == null || num2 == null || num1.length() == 0 || num2.length() == 0) {
             return "";
         }

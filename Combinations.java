@@ -11,9 +11,6 @@ public class Combinations {
             res.add(new ArrayList<>(cur));// O(k) not consider?
             return;
         }
-        if (index > n) {
-            return;
-        }
         for (int i = index; i <= n; i++) {
             cur.add(i);
             dfs(n, k, i + 1, cur, res);

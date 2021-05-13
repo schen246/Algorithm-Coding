@@ -27,7 +27,7 @@ public class WordSearch {
         for (int[] dir : DIRS) {
             int x = i + dir[0], y = j + dir[1];
             if (x >= 0 && x < board.length && y >= 0 && y < board[0].length && !visited[x][y]) {
-                if (dfs(board, word, index + 1, i, j, visited)) {
+                if (dfs(board, word, index + 1, x, y, visited)) {
                     return true;
                 }
             }

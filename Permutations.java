@@ -26,5 +26,5 @@ public class Permutations {
         nums[i] = nums[j];
         nums[j] = tmp;
     }
-    // time: O(n!) space: O(n)
+    // time: O(n! * n) space: O(n)
 }

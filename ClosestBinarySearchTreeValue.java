@@ -5,6 +5,9 @@ public class ClosestBinarySearchTreeValue {
         }
         int res = root.val;
         while (root != null) {
+            if (root.val == target) {
+                return root.val;
+            }
             if (Math.abs(root.val - target) < Math.abs(res - target)) {
                 res = root.val;
             }

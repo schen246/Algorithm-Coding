@@ -13,4 +13,19 @@ public class InorderSuccessorInBST {
         return res;
     }
     // time: O(height) space: O(1)
+
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val <= p.val) {
+            return inorderSuccessor(root.right, p);
+        } else {
+            TreeNode left = inorderSuccessor(root.left, p);
+            if (left != null) {
+                return left;
+            }
+            return root;
+        }
+    }
 }

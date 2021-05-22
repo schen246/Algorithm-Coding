@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Queue;
 
 public class GraphValidTree {
     public boolean validTree(int n, int[][] edges) {
@@ -16,7 +17,7 @@ public class GraphValidTree {
             map.get(edge[1]).add(edge[0]);
         }
         boolean[] visited = new boolean[n];
-        if (!dfs(0, -1, map, visited)) {
+        if (!dfs(0, -1, map, visited)) {//bfs(0, map, visited)
             return false;
         }
         for (int i = 0; i < n; i++) {
@@ -42,4 +43,24 @@ public class GraphValidTree {
         return true;
     }
     // method: dfs time: O(n) space: O(n)
+
+    private boolean bfs(int num, Map<Integer, List<Integer>> map, booelan[] visited) {
+        Queue<int[]> q = new ArrayDeque<>();// <cur, pre>
+        q.offer(new int[]{num, -1});
+        visited[num] = true;
+        while (q.size() > 0) {
+            int[] cur = q.poll();
+            for (int nei : map.get(cur[0])) {
+                if (nei != cur[1]) {
+                    if (visited[nei]) {
+                        return false;
+                    }
+                    q.offer(new int[]{nei, cur[0]});
+                    visited[nei] = true;
+                }
+            }
+        }
+        return true;
+    }
+    // method: bfs time: O(n) space: O(n)
 }

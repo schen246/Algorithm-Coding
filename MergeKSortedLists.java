@@ -1,37 +1,35 @@
 public class MergeKSortedLists {
-    // Q1: merge k sorted lists
-    // M1: k-way merge, time O(knlogk) space O(k)
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null || lists.length == 0) {
-            return null;
-        }
-        PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> (a.val - b.val));
-        for (ListNode li : lists) {
-            if (li != null) {
-                pq.offer(li);
+        // k-way merge -> pq -> time: O(k * n * logk) space: O(k)
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> {
+            return a.val - b.val;
+        });
+        for (ListNode i : lists) {
+            if (i != null) {
+                pq.offer(i);
             }
         }
         ListNode head = pq.peek();
-        ListNode res = head;
-        while (!pq.isEmpty()) {
+        while (pq.size() > 0) {
             ListNode cur = pq.poll();
-            res.next = cur;
-            res = res.next;
             if (cur.next != null) {
                 pq.offer(cur.next);
+            }
+            if (pq.size() > 0) {
+                cur.next= pq.peek();
             }
         }
         return head;
     }
 
-    // M2: two-way merge recursively, time O(knlogk) space O(logk)
     public ListNode mergeKLists(ListNode[] lists) {
+        // 2-way merge -> pq -> time: O(k * n * logk) space: O(logk)
         if (lists == null || lists.length == 0) {
             return null;
         }
         return mergeK(lists, 0, lists.length - 1);
     }
-
+    
     private ListNode mergeK(ListNode[] lists, int i, int j) {
         if (i == j) {
             return lists[i];
@@ -39,27 +37,33 @@ public class MergeKSortedLists {
         int mid = i + (j - i) / 2;
         ListNode left = mergeK(lists, i, mid);
         ListNode right = mergeK(lists, mid + 1, j);
-        return mergeTwoLists(left, right);
+        return mergeTwo(left, right);
     }
-
-    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    
+    private ListNode mergeTwo(ListNode left, ListNode right) {
+        if (left == null) {
+            return right;
+        }
+        if (right == null) {
+            return left;
+        }
         ListNode d = new ListNode(0);
         ListNode cur = d;
-        while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
-                cur.next = l1;
-                l1 = l1.next;
+        while (left != null && right != null) {
+            if (left.val < right.val) {
+                cur.next = left;
+                left = left.next;
             } else {
-                cur.next = l2;
-                l2 = l2.next;
+                cur.next = right;
+                right = right.next;
             }
             cur = cur.next;
         }
-        if (l1 != null) {
-            cur.next = l1;
+        if (left != null) {
+            cur.next = left;
         }
-        if (l2 != null) {
-            cur.next = l2;
+        if (right != null) {
+            cur.next = right;
         }
         return d.next;
     }

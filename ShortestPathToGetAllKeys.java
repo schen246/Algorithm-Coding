@@ -2,7 +2,7 @@ public class ShortestPathToGetAllKeys {
     public int shortestPathAllKeys(String[] grid) {
         // assume: matrix, only .#a-zA-Z, each char at most once, <a,A> -> <key, lock>
         // bfs + bitMask state
-        // time: O(m * n) space: O(m * n)
+        // time: O(m * n * 2^k) space: O(m * n)
         int m = grid.length, n = grid[0].length();
         Queue<int[]> q = new ArrayDeque<>();//x,y,state
         Set<String> visited = new HashSet<>();

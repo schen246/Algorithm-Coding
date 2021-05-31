@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class maximumSizeSubarraySumEqualsK {
+public class MaximumSizeSubarraySumEqualsK {
     // M1: two pointers - time: O(n^2) space: O(1)
     // M2: map - time: O(n) space: O(n)
     public int maxSubArrayLen(int[] nums, int k) {

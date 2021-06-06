@@ -63,3 +63,64 @@ class Node {
         this.val = val;
     }
 }
+
+class LRUCache2 {
+    Node head, tail;
+    int capacity;
+    Map<Integer, Node> map;
+    public LRUCache(int capacity) {
+        head = new Node(-1, -1);
+        tail = new Node(-1, -1);
+        head.next = tail;
+        tail.prev = head;
+        this.capacity = capacity;
+        map = new HashMap<>();
+    }
+    
+    public int get(int key) {
+        if (map.get(key) == null) {
+            return -1;
+        }
+        Node node = map.get(key);
+        // disconnect node with prev and next
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        // connect node with tail.prev
+        tail.prev.next = node;
+        node.prev = tail.prev;
+        // connect node with tail
+        node.next = tail;
+        tail.prev = node;
+        return node.val;
+    }
+    
+    public void put(int key, int value) {
+        if (map.get(key) != null) {
+            map.get(key).val = value;
+            get(key);
+            return;
+        }
+        Node node = new Node(key, value);
+        map.put(key, node);
+        // add node to tail
+        tail.prev.next = node;
+        node.prev = tail.prev;
+        node.next = tail;
+        tail.prev = node;
+        if (map.size() > capacity) {
+            Node cur = head.next;
+            cur.prev.next = cur.next;
+            cur.next.prev = cur.prev;
+            map.remove(cur.key);
+        }
+    }
+}
+
+class Node {
+    int key, val;
+    Node prev, next;
+    public Node(int k, int v) {
+        key = k;
+        val = v;
+    }
+}

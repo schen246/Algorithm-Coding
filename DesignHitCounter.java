@@ -16,3 +16,33 @@ public class DesignHitCounter {
         return q.size();
     }
 }
+
+class HitCounter {
+
+    private int[] hits;
+    private int[] times;
+    private static final int LIMIT = 300;
+    public HitCounter() {
+        hits = new int[LIMIT];
+        times = new int[LIMIT];
+    }
+    
+    public void hit(int timestamp) {
+        int index = timestamp % LIMIT;
+        if (times[index] != timestamp) {
+            times[index] = timestamp;
+            hits[index] = 0;
+        }
+        hits[index]++;
+    }
+    
+    public int getHits(int timestamp) {
+        int res = 0;
+        for (int i = 0; i < LIMIT; i++) {
+            if (timestamp >= times[i] && timestamp - times[i] < LIMIT) {
+                res += hits[i];
+            }
+        }
+        return res;
+    }
+}

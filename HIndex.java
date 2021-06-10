@@ -30,4 +30,19 @@ public class HIndex {
         }
         return res;
     }
+
+    // M3: count sort - time: O(n) space: O(n)
+    public int hIndex3(int[] citations) {
+        int n = citations.length;
+        int[] count = new int[n + 1];
+        for (int c : citations) {
+            count[Math.min(c, n)]++;
+        }
+        int h = n, cur = count[h];
+        while (cur < h) {
+            h--;
+            cur += count[h];
+        }
+        return h;
+    }
 }

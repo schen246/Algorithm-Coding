@@ -1,4 +1,5 @@
 public class MissingElementInSortedArray {
+    // binary search - time: O(logn) space: O(1)
     public int missingElement(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return -1;

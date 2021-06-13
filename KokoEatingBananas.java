@@ -1,34 +1,28 @@
 public class KokoEatingBananas {
+    // binary search - time: O(n log (max pile)) space: O(1)
     public int minEatingSpeed(int[] piles, int H) {
-        if (piles == null || piles.length == 0) {
-            return -1;
+        int left = 0, right = Integer.MIN_VALUE;
+        for (int pile : piles) {
+            right = Math.max(right, pile);
         }
-        int left = 1, right = Integer.MIN_VALUE;
-        for (int p : piles) {
-            if (p > right) {
-                right = p;
-            }
-        }
-        while (left > right - 1) {
-            int mid = left + (right - left) / 2;
-            int time = eat(piles, mid);
-            if (time <= H) {
-                right = mid;
-            } else {
-                left = mid;
-            }
-        }
-        if (eat(piles, left) < H) {
-            return left;
-        }
-        return right;
-    }
-
-    private int eat(int[] piles, int target) {
         int res = 0;
-        for (int p : piles) {
-            res += Math.ceil((double)p / target);
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (canEat(piles, H, mid)) {
+                res = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
         }
         return res;
+    }
+    
+    private boolean canEat(int[] piles, int H, int speed) {
+        int cnt = 0;
+        for (int pile : piles) {
+            cnt += (int)Math.ceil((double)pile / speed);
+        }
+        return cnt <= H;
     }
 }

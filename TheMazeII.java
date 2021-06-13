@@ -5,11 +5,11 @@ public class TheMazeII {
         if (start[0] == destination[0] && start[1] == destination[1]) {
             return 0;
         }
-        PriorityQueue<int[]> q = new PriorityQueue<>((a, b) -> a[2] - b[2]);// min heap
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[2] - b[2]);// min heap
         Set<Integer> set = new HashSet<>();
-        q.offer(new int[]{start[0], start[1], 0});// x,y,distance
-        while (q.size() > 0) {
-            int[] cur = q.poll();
+        pq.offer(new int[]{start[0], start[1], 0});// x,y,distance
+        while (pq.size() > 0) {
+            int[] cur = pq.poll();
             if (!set.add(cur[0] * n + cur[1])) {
                 continue;// dedup
             }
@@ -17,7 +17,7 @@ public class TheMazeII {
                 return cur[2];
             }
             for (int[] nei : getNei(maze, cur)) {
-                q.offer(nei);
+                pq.offer(nei);
             }
         }
         return -1;

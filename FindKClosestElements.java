@@ -39,4 +39,24 @@ public class FindKClosestElements {
         }
         return res;
     }
+
+    // M2: sliding window - time: O(n) space: O(1)
+    public List<Integer> findClosestElements2(int[] arr, int k, int x) {
+        int index = 0;
+        for (int i = k; i < arr.length; i++) {
+            if (arr[i - k] == arr[i]) {
+                index = i - k;
+                continue;
+            }
+            if (Math.abs(arr[i - k] - x) <= Math.abs(arr[i] - x)) {
+                index = i - k;
+                break;
+            }
+        }
+        List<Integer> res = new ArrayList<>();
+        for (int i = index; i < index + k; i++) {
+            res.add(arr[i]);
+        }
+        return res;
+    }
 }

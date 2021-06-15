@@ -28,7 +28,7 @@ public class ShortestPathToGetAllKeys {
         while (q.size() > 0) {
             int size = q.size();
             depth++;
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < size; i++) {
                 int[] cur = q.poll();
                 for (int[] dir : DIRS) {
                     int x = cur[0] + dir[0], y = cur[1] + dir[1], key = cur[2];

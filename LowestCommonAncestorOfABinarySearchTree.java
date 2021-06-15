@@ -13,7 +13,7 @@ public class LowestCommonAncestorOfABinarySearchTree {
     }
     // recursion - time: O(n) space: O(n)
 
-    public TreeNode lowestCommonAncestor(TreeNode root, int p, int q) {
+    public TreeNode lowestCommonAncestor2(TreeNode root, int p, int q) {
         while (root != null) {
             if (root.val < p && root.val < q) {
                 root = root.right;

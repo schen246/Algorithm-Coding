@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 public class NextGreaterNodeInLinkedList {
     // monoStack - time: O(n) space: O(n)
     public int[] nextLargerNodes(ListNode head) {

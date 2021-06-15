@@ -1,3 +1,8 @@
+package Amazon;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class PairsOfSongsWithTotalDurationsDivisibleBy60 {
     public int numPairsDivisibleBy60(int[] time) {
         Map<Integer, Integer> map = new HashMap<>();// val, freq

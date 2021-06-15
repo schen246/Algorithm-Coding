@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+
 public class ShortestPathToGetAllKeys {
     public int shortestPathAllKeys(String[] grid) {
         // assume: matrix, only .#a-zA-Z, each char at most once, <a,A> -> <key, lock>
@@ -12,8 +17,8 @@ public class ShortestPathToGetAllKeys {
                 char c = grid[i].charAt(j);
                 if (c == '@') {
                     q.offer(new int[]{i, j, 0});
-                    visited.add(x + ":" + y + "" + 0);
-                } else if (c >= 'a' && x <= 'z') {
+                    visited.add(i + ":" + j + "" + 0);
+                } else if (c >= 'a' && j <= 'z') {
                     target |= (1 << (c - 'a'));
                 }
             }
@@ -44,4 +49,6 @@ public class ShortestPathToGetAllKeys {
         }
         return -1;
     }
+
+    private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 }

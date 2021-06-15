@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExpressionAddOperators {
     public List<String> addOperators(String num, int target) {
         List<String> res = new ArrayList<>();
@@ -5,8 +8,8 @@ public class ExpressionAddOperators {
         dfs(num, target, 0, 0, 0, sb, res);
         return res;
     }
-
-    private void dfs(String num, int target, int index, int pre, int val, StringBuilder sb, List<String> res) {
+    
+    private void dfs(String num, int target, int index, long pre, long val, StringBuilder sb, List<String> res) {
         if (index == num.length()) {
             if (val == target) {
                 res.add(sb.toString());
@@ -31,6 +34,7 @@ public class ExpressionAddOperators {
                 dfs(num, target, i + 1, pre * cur, val - pre + pre * cur, sb.append('*').append(cur), res);
                 sb.setLength(len);
             }
+            
         }
     }
     // time: O(4^(n-1)) * O(n) toString space: O(n)

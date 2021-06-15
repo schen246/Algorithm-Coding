@@ -13,7 +13,7 @@ public class InsertIntoABinarySearchTree {
     }
     
     // M2: iteration time: O(height) space: O(height)
-    public TreeNode insertIntoBST(TreeNode root, int val) {
+    public TreeNode insertIntoBST2(TreeNode root, int val) {
         if (root == null) {
             return new TreeNode(val);
         }

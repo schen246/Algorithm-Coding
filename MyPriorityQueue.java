@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MyPriorityQueue {
     ArrayList<Integer> arr = new ArrayList<>();
 
@@ -44,7 +46,7 @@ public class MyPriorityQueue {
 
     private void swap(int i, int j) {
         int tmp = arr.get(i);
-        arr.put(i, arr.get(j));
-        arr.put(j, tmp);
+        arr.set(i, arr.get(j));
+        arr.set(j, tmp);
     }
 }

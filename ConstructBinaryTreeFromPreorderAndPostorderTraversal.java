@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class ConstructBinaryTreeFromPreorderAndPostorderTraversal {
     // divide and conquer + map - time: O(n) space: O(n) + O(height)
     public TreeNode constructFromPrePost(int[] pre, int[] post) {

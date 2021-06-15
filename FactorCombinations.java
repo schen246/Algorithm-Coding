@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class FactorCombinations {
     // dfs + backtracking - time: O(branches^layers) = O(logn ^ logn) space: O(layers) = O(logn)
     public List<List<Integer>> getFactors(int n) {

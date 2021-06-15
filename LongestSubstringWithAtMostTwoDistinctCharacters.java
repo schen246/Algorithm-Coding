@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class LongestSubstringWithAtMostTwoDistinctCharacters {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         if (s == null || s.length() == 0) {

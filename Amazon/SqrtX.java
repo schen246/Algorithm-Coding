@@ -1,3 +1,4 @@
+package Amazon;
 public class SqrtX {
     //M1: binary search - time: O(logn) space: O(1)
     public int mySqrt(int x) {

@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class MinimumCostToHireKWorkers {
     // time: O(nlogn) + O(nlogk) space: O(n) + O(k)
     public double mincostToHireWorkers(int[] quality, int[] wage, int K) {

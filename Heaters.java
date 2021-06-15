@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Heaters {
     // time: O(heaters.length * log(heaters.length) + houses.length * log(heaters.length))
     public int findRadius(int[] houses, int[] heaters) {

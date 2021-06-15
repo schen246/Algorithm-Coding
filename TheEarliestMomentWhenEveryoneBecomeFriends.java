@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class TheEarliestMomentWhenEveryoneBecomeFriends {
     public int earliestAcq(int[][] logs, int N) {
         Arrays.sort(logs, (a, b) -> {

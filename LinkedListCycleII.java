@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedListCycleII {
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
@@ -14,7 +17,7 @@ public class LinkedListCycleII {
     }
     // time: O(n) space: O(n)
     
-    public ListNode detectCycle(ListNode head) {
+    public ListNode detectCycle2(ListNode head) {
         if (head == null || head.next == null) {
             return null;
         }

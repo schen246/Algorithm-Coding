@@ -1,5 +1,8 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 public class GraphValidTree {
@@ -44,7 +47,7 @@ public class GraphValidTree {
     }
     // method: dfs time: O(n) space: O(n)
 
-    private boolean bfs(int num, Map<Integer, List<Integer>> map, booelan[] visited) {
+    private boolean bfs(int num, Map<Integer, List<Integer>> map, boolean[] visited) {
         Queue<int[]> q = new ArrayDeque<>();// <cur, pre>
         q.offer(new int[]{num, -1});
         visited[num] = true;

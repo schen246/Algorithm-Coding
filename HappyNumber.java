@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class HappyNumber {
     // find circle in a series of number
     // 2 -> 4 -> 16 -> 37 -> 58 -> 89 -> 145 -> 42 -> 20 -> 4

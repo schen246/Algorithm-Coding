@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TimeNeededToInformAllEmployees {
     public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {

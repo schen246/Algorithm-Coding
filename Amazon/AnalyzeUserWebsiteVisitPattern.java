@@ -1,3 +1,14 @@
+package Amazon;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class AnalyzeUserWebsiteVisitPattern {
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
         Map<String, List<Pair>> userMap = new HashMap<>();// username, list of pair

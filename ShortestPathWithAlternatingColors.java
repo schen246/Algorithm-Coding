@@ -1,3 +1,10 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
 public class ShortestPathWithAlternatingColors {
     // bfs - time: O(V + E) space: O(V + E)
     public int[] shortestAlternatingPaths(int n, int[][] red_edges, int[][] blue_edges) {

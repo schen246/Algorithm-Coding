@@ -1,6 +1,8 @@
-import java.awt.List;
+
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class IncreasingSubsequences {
     //      4       6       7       7(X)

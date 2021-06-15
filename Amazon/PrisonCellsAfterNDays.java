@@ -1,3 +1,8 @@
+package Amazon;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class PrisonCellsAfterNDays {
     // set check cycle - time: O(K * min(n, 2^K)) K is the number of cells space: O(K * 2^K) use set of string
     public int[] prisonAfterNDays(int[] cells, int n) {

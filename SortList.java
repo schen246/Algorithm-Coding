@@ -12,7 +12,7 @@ public class SortList {
         return merge(left, right);
     }
 
-    private ListNode merge(ListNod l1, ListNode l2) {
+    private ListNode merge(ListNode l1, ListNode l2) {
         ListNode d = new ListNode(0);
         ListNode cur = d;
         while (l1 != null && l2 != null) {

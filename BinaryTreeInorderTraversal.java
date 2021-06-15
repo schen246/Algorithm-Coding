@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 class TreeNode {
     public int val;
     public TreeNode left;
@@ -17,7 +22,7 @@ public class BinaryTreeInorderTraversal {
         while (!stack.isEmpty()) {
             TreeNode cur = stack.pop();
             res.add(cur.val);
-            pushLeft(cur.right);
+            pushLeft(cur.right, stack);
         }
         return res;
     }

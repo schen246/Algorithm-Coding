@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class LongestRepeatingSubstring {
     // M1: set - time: O(n^3) space: O(n^2)
     public int longestRepeatingSubstring(String S) {

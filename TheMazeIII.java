@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
+
 public class TheMazeIII {
     // bfs - time: O(mnlogmn) space: O(mn * mn)
     public String findShortestWay(int[][] maze, int[] ball, int[] hole) {

@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class NumberOfSquarefulArrays {
     public int numSquarefulPerms(int[] A) {
         int[] res = new int[1];

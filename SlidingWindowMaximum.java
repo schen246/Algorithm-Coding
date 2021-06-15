@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class SlidingWindowMaximum {
     // M1: maxHeap O(nlogk)
     // M2: sliding window O(n) with non-increasing inside

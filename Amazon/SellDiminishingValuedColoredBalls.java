@@ -1,4 +1,5 @@
-import org.graalvm.compiler.core.common.FieldsScanner.CalcOffset;
+package Amazon;
+import java.util.Arrays;
 
 public class SellDiminishingValuedColoredBalls {
     private static final int M = 1000000007;

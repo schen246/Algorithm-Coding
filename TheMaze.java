@@ -1,3 +1,10 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+
 public class TheMaze {
     public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         if (maze == null || maze.length == 0 || maze[0].length == 0 || maze[start[0]][start[1]] == 1) {

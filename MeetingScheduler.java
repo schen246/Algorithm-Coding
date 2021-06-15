@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MeetingScheduler {
     public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
         List<Integer> res = new ArrayList<>();

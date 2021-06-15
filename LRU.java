@@ -2,6 +2,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRU {
+    class Node {
+        int key;
+        int val;
+        Node prev;
+        Node next;
+    
+        public Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
     Node head;
     Node tail;
     int capacity;
@@ -52,23 +64,22 @@ public class LRU {
     }
 }
 
-class Node {
-    int key;
-    int val;
-    Node prev;
-    Node next;
 
-    public Node(int key, int val) {
-        this.key = key;
-        this.val = val;
-    }
-}
 
 class LRUCache2 {
+    class Node {
+        int key, val;
+        Node prev, next;
+        public Node(int k, int v) {
+            key = k;
+            val = v;
+        }
+    }
+    
     Node head, tail;
     int capacity;
     Map<Integer, Node> map;
-    public LRUCache(int capacity) {
+    public LRUCache2(int capacity) {
         head = new Node(-1, -1);
         tail = new Node(-1, -1);
         head.next = tail;
@@ -113,14 +124,5 @@ class LRUCache2 {
             cur.next.prev = cur.prev;
             map.remove(cur.key);
         }
-    }
-}
-
-class Node {
-    int key, val;
-    Node prev, next;
-    public Node(int k, int v) {
-        key = k;
-        val = v;
     }
 }

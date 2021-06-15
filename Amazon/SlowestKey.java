@@ -1,3 +1,4 @@
+package Amazon;
 public class SlowestKey {
     // linear scan - time: O(n) space: O(1)
     public char slowestKey(int[] releaseTimes, String keysPressed) {

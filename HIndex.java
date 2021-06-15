@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HIndex {
     // M1: sort - time: O(nlogn) + O(n) space: O(1) depends on sorting
     public int hIndex(int[] citations) {

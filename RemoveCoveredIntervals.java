@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class RemoveCoveredIntervals {
     public int removeCoveredIntervals(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {

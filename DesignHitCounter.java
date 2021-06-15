@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class DesignHitCounter {
     private static final int LIMIT = 300;
     private Queue<Integer> q;

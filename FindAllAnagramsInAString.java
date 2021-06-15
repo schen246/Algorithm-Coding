@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class FindAllAnagramsInAString {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();

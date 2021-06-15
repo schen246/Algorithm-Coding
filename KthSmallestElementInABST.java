@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class KthSmallestElementInABST {
     public int kthSmallest(TreeNode root, int k) {
         // inorder traversal iteratively, time: O(height + k) space: O(height)

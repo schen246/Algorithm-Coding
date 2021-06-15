@@ -1,3 +1,4 @@
+package Amazon;
 public class SuperPow {
     // a^(int[] b) = a^(b[0]) * a^(10 b[1]) * a^(100 b[2]) * ... = a^(b[0]) * (a^10)^(b[1]) * (a^100)^(b[2]) * ...
     private static final int M = 1337;

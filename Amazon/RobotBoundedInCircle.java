@@ -1,3 +1,4 @@
+package Amazon;
 public class RobotBoundedInCircle {
     private static final int[][] DIRS = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 

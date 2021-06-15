@@ -1,3 +1,4 @@
+package Amazon;
 public class NumberOfProvinces {
     public int findCircleNum(int[][] M) {
         int n = M.length, res = 0;

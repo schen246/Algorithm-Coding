@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {

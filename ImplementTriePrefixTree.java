@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class ImplementTriePrefixTree {
     Node root;
@@ -19,7 +20,7 @@ public class ImplementTriePrefixTree {
         cur.isWord = true;
     }
 
-    public boolean search(Strng word) {// O(word.length)
+    public boolean search(String word) {// O(word.length)
         Node cur = root;
         for (char c : word.toCharArray()) {
             if (!cur.children.containsKey(c)) {

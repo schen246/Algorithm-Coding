@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class IntervalListIntersections {
     public int[][] intervalIntersection(int[][] A, int[][] B) {
         if (A == null || B == null || A.length == 0 || B.length == 0) {
@@ -11,7 +14,7 @@ public class IntervalListIntersections {
             } else if (A[i][0] > B[j][1]) {
                 j++;
             } else {
-                res.add(new int[]{Math.max(A[i][0], B[j][0]), Math,min(A[i][1], B[j][1])});
+                res.add(new int[]{Math.max(A[i][0], B[j][0]), Math.min(A[i][1], B[j][1])});
                 if (A[i][1] < B[j][1]) {
                     i++;
                 } else {

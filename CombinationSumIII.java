@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class CombinationSumIII {
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> res = new ArrayList<>();
@@ -6,7 +9,7 @@ public class CombinationSumIII {
         return res;
     }
 
-    private void dfs(int k, int n, int index, List<Integer> cur, List<List<Integer>> cur) {
+    private void dfs(int k, int n, int index, List<Integer> cur, List<List<Integer>> res) {
         if (cur.size() == k) {
             if (n == 0) {
                 res.add(new ArrayList<>(cur));

@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class ValidateBinarySearchTree {
     // M1: recursion
     public boolean isValidBST(TreeNode root) {
@@ -13,7 +16,7 @@ public class ValidateBinarySearchTree {
     // time: O(n) space: O(height)
 
     // M2: iteration stack
-    public boolean isValidBST(TreeNode root) {
+    public boolean isValidBST2(TreeNode root) {
         Deque<TreeNode> stack = new ArrayDeque<>();
         pushLeft(root, stack);
         int pre = Integer.MIN_VALUE;

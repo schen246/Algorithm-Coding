@@ -1,3 +1,10 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class PalindromePermutationII {
     public List<String> generatePalindromes(String s) {
         List<String> res = new ArrayList<>();

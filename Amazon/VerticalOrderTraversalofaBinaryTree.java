@@ -1,3 +1,12 @@
+package Amazon;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
 public class VerticalOrderTraversalofaBinaryTree {
     // bfs + map + sort - time: O(n) + O(nlogn) space: O(n)
     public List<List<Integer>> verticalTraversal(TreeNode root) {

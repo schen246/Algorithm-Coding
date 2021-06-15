@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class JumpGame {
     // M1: dp - time: O(n^2) space: O(n)
     public boolean canJump(int[] nums) {

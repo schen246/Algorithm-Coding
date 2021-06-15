@@ -1,3 +1,4 @@
+package Amazon;
 public class SameTree {
     // recursion - time: O(n) space: O(height)
     public boolean isSameTree(TreeNode p, TreeNode q) {

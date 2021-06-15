@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 public class KthSmallestElementInASortedMatrix {
     public int kthSmallest(int[][] matrix, int k) {
         // M1: PriorityQueue

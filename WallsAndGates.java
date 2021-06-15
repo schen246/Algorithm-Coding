@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class WallsAndGates {
     // time: O(m * n) space: O(m * n)
     public void wallsAndGates(int[][] rooms) {

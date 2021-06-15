@@ -1,8 +1,10 @@
+import java.util.PriorityQueue;
+
 public class FindMedianFromDataStream {
     PriorityQueue<Integer> smaller;
     PriorityQueue<Integer> larger;
     
-    public MedianFinder() {
+    public FindMedianFromDataStream() {
         smaller = new PriorityQueue<>((a, b) -> (b - a));// maxHeap
         larger = new PriorityQueue<>();// minHeap
     }

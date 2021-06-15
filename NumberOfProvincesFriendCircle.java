@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class NumberOfProvincesFriendCircle {
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length, res = 0;

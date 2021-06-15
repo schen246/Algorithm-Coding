@@ -1,5 +1,7 @@
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.Map;
 
 public class NextGreaterElementI {
     // monoStack - non-increasing 4 3 2 1

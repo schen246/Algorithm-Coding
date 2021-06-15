@@ -1,3 +1,11 @@
+package Amazon;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class LeastNumberofUniqueIntegersafterKRemovals {
     // linked list hashmap - time: O(nlogn) space: O(n) depends on sort
     public int findLeastNumOfUniqueInts(int[] arr, int k) {

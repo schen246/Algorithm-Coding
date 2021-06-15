@@ -14,7 +14,7 @@ public class InorderSuccessorInBST {
     }
     // time: O(height) space: O(1)
 
-    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+    public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
         if (root == null) {
             return null;
         }

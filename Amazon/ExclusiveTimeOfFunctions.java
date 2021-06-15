@@ -1,4 +1,8 @@
+package Amazon;
+
+import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.List;
 
 public class ExclusiveTimeOfFunctions {
     // sweep line + stack - time: O(logs.size() * log.length()) space: O(logs.size())

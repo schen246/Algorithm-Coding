@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class AccountsMerge {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
@@ -28,7 +29,7 @@ public class AccountsMerge {
     }
 
     private void dfs(Map<String, List<String>> map, String email, List<String> cur, Set<String> visited) {
-        if (visited.contians(email)) {
+        if (visited.contains(email)) {
             return;
         }
         visited.add(email);

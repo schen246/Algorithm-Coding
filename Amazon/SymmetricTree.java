@@ -1,6 +1,6 @@
+package Amazon;
+import java.util.ArrayDeque;
 import java.util.Queue;
-
-import javax.swing.tree.TreeNode;
 
 public class SymmetricTree {
     // M1: recursion - time: O(n) space: O(height)

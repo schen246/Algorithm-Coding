@@ -1,9 +1,7 @@
-import java.util.function.Predicate;
-
 public class RangeSumQueryImmutable {
     int[] prefixSum;
 
-    public NumArray(int[] nums) {// time: O(n) space: O(n)
+    public RangeSumQueryImmutable(int[] nums) {// time: O(n) space: O(n)
         if (nums == null || nums.length == 0) {
             return;
         }

@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
+
 public class TheMazeII {
     // bfs + pq - time: O(mnlogmn) space: O(mn)
     public int shortestDistance(int[][] maze, int[] start, int[] destination) {

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
@@ -6,7 +9,7 @@ public class Subsets {
         return res;
     }
 
-    private void dfs(int[] num, int index, List<Integer> cur, List<List<Integer>> res) {
+    private void dfs(int[] nums, int index, List<Integer> cur, List<List<Integer>> res) {
         if (index == nums.length) {
             res.add(new ArrayList<>(cur));
             return;

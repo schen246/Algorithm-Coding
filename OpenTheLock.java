@@ -1,3 +1,11 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+
 public class OpenTheLock {
     // time: O(L^2 * 10^L) space: O(10^L)
     public int openLock(String[] deadends, String target) {

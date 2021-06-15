@@ -1,3 +1,11 @@
+package Amazon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CountOfSmallerNumbersAfterSelf {
     // divide and conquer - mergeSort
     // time: O(nlogn) space: O(n)

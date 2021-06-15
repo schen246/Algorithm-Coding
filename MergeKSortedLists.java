@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class MergeKSortedLists {
     public ListNode mergeKLists(ListNode[] lists) {
         // k-way merge -> pq -> time: O(k * n * logk) space: O(k)
@@ -22,7 +26,7 @@ public class MergeKSortedLists {
         return head;
     }
 
-    public ListNode mergeKLists(ListNode[] lists) {
+    public ListNode mergeKLists2(ListNode[] lists) {
         // 2-way merge -> pq -> time: O(k * n * logk) space: O(logk)
         if (lists == null || lists.length == 0) {
             return null;

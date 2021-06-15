@@ -1,5 +1,8 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 public class BinaryTreeVerticalOrderTraversal {
@@ -29,7 +32,7 @@ public class BinaryTreeVerticalOrderTraversal {
             }
         }
         for (int i = minVal; i <= maxVal; i++) {
-            res.add(ma.get(i));
+            res.add(map.get(i));
         }
         return res;
     }

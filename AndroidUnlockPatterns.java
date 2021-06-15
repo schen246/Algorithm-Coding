@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.Set;
+
+
 public class AndroidUnlockPatterns {
     public int numberOfPatterns(int m, int n) {
         int[] res = new int[1];
@@ -32,10 +36,10 @@ public class AndroidUnlockPatterns {
         int px = (pre - 1) / 3, py = (pre - 1) % 3;
         int cx = (cur - 1) / 3, cy = (cur - 1) % 3;
         if (Math.abs(px - cx) == 2 && Math.abs(py - cy) != 1) {
-            return set.contains((px + cx)/2 * 3 + (py + cy)/2 + 1);
+            return path.contains((px + cx)/2 * 3 + (py + cy)/2 + 1);
         }
         if (Math.abs(py - cy) == 2 && Math.abs(px - cx) == 0) {
-            return set.contains((px + cx)/2 * 3 + (py + cy)/2 + 1);
+            return path.contains((px + cx)/2 * 3 + (py + cy)/2 + 1);
         }
         return true;
     }

@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 public class ShortestDistanceFromAllBuildings {
     public int shortestDistance(int[][] grid) {
         // assume: at lease one building 1, if no res return -1, grid not null/empty, only 0/1/2
@@ -32,7 +37,7 @@ public class ShortestDistanceFromAllBuildings {
                             visited[x][y] = true;
                             count[x][y]++;
                             sum[x][y] += depth;
-                            if (count[x][y] = cnt) {
+                            if (count[x][y] == cnt) {
                                 res = Math.min(res, sum[x][y]);
                             }
                         }
@@ -43,4 +48,5 @@ public class ShortestDistanceFromAllBuildings {
         return res == Integer.MAX_VALUE ? -1 : res;
     }
     // time: O(m * n) space: O(m * n)
+    private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 }

@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-
-import javax.print.attribute.HashAttributeSet;
+import java.util.List;
+import java.util.Set;
 
 public class ThreeSum {
     // time: O(n^2) space: O(n) sort

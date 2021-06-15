@@ -1,3 +1,12 @@
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 public class AllNodesDistanceKInBinaryTree {
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
         // assume: tree not empty, unique node, target in tree

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class FindKClosestElements {
     // M1: binary search + sliding window - time: O(logn) + O(k) space: O(1)
     public List<Integer> findClosestElements(int[] arr, int k, int x) {

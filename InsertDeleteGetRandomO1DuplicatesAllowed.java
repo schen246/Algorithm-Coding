@@ -1,12 +1,17 @@
-import java.awt.List;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class InsertDeleteGetRandomO1DuplicatesAllowed {
     Map<Integer, Set<Integer>> map;// val, set of index of val in list
     List<Integer> list;// val
     Random random;
+
     public InsertDeleteGetRandomO1DuplicatesAllowed() {
         map = new HashMap<>();
         list = new ArrayList<>();

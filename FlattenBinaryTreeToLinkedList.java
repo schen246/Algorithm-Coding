@@ -30,16 +30,16 @@ public class FlattenBinaryTreeToLinkedList {
     }
 
     // M2: recursion - time: O(n) space: O(height)
-    public void flatten(TreeNode root) {
-        helper(root);
+    public void flatten2(TreeNode root) {
+        helper2(root);
     }
     
-    private TreeNode helper(TreeNode root) {
+    private TreeNode helper2(TreeNode root) {
         if (root == null) {
             return null;
         }
-        TreeNode leftEnd = helper(root.left);
-        TreeNode rightEnd = helper(root.right);
+        TreeNode leftEnd = helper2(root.left);
+        TreeNode rightEnd = helper2(root.right);
         if (leftEnd != null && rightEnd != null) {
             leftEnd.right = root.right;
             root.right = root.left;

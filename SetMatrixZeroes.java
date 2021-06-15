@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class SetMatrixZeroes {
     // M1: new matrix - O(m * n) space
     // M2: two sets - O(k) space, k is the number of zeroes

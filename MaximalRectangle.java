@@ -12,7 +12,7 @@ public class MaximalRectangle {
         int res = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                prefixSum = matrix[i][j] == '0' ? 0 : prefixSum[j] + 1;
+                prefixSum[j] = matrix[i][j] == '0' ? 0 : prefixSum[j] + 1;
             }
             res = Math.max(res, largestArea(prefixSum));
         }

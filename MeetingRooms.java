@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MeetingRooms {
     // sort - time: O(nlogn) space: O(1) depends on sort
     public boolean canAttendMeetings(int[][] intervals) {

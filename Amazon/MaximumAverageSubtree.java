@@ -1,3 +1,5 @@
+package Amazon;
+
 public class MaximumAverageSubtree {
     // divide and conquer - time: O(n) space: O(height)
     public double maximumAverageSubtree(TreeNode root) {
@@ -24,5 +26,18 @@ public class MaximumAverageSubtree {
         }
         res[0] = Math.max(res[0], (double)sum / cnt);
         return new int[]{sum, cnt};
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }

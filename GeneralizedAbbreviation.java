@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class GeneralizedAbbreviation {
     public List<String> generateAbbreviations(String word) {
         List<String> res = new ArrayList<>();
@@ -7,7 +10,7 @@ public class GeneralizedAbbreviation {
         return res;
     }
 
-    private void dfs(String word, int level, int index, StringBuilder sb, List<List<String>> res) {
+    private void dfs(String word, int level, int index, StringBuilder sb, List<String> res) {
         if (index == word.length()) {
             res.add(sb.toString());
             return;

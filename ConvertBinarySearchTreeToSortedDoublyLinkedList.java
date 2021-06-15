@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class ConvertBinarySearchTreeToSortedDoublyLinkedList {
     // M1: iteration time: O(n) space: O(H)
     public TreeNode treeToDoublyList(TreeNode root) {
@@ -31,7 +34,7 @@ public class ConvertBinarySearchTreeToSortedDoublyLinkedList {
     }
     
     // M2: recursion time: O(n) space: O(H)
-    public TreeNode treeToDoublyList(TreeNode root) {
+    public TreeNode treeToDoublyList2(TreeNode root) {
         if (root == null) {
             return root;
         }
@@ -43,7 +46,7 @@ public class ConvertBinarySearchTreeToSortedDoublyLinkedList {
 
     private TreeNode[] helper(TreeNode root) {
         if (root == null) {
-            return root;
+            return null;
         }
         TreeNode[] left = helper(root.left);
         TreeNode[] right = helper(root.right);

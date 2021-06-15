@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -11,7 +12,7 @@ public class SortCharactersByFrequency {
             if (map.get(a).equals(map.get(b))) {
                 return a - b;// lower alphabetical
             }
-            return map.get(b) - max.get(a);// max heap
+            return map.get(b) - map.get(a);// max heap
         });
         for (char c : map.keySet()) {
             pq.offer(c);

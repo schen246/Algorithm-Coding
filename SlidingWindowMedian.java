@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SlidingWindowMedian {
     public double[] medianSlidingWindow(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k <= 0 || nums.length < k) {

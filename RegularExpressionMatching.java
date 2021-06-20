@@ -33,4 +33,30 @@ public class RegularExpressionMatching {
         memo[index1][index2] = -1;
         return false;
     }
+
+    // dp - time: O(m * n) space: O(m * n)
+    // dp[i][j]: whether s[i, end] matches p[j, end]
+    // j + 1 == *: dp[i][j] = dp[i][j + 2] || (match && dp[i + 1][j])
+    // match: dp[i][j] = dp[i + 1][j + 1]
+    public boolean isMatch2(String s, String p) {
+        int m = s.length(), n = p.length();
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        for (int i = m; i >= 0; i--) {
+            for (int j = n; j >= 0; j--) {
+                if (i == m && j == n) {
+                    dp[i][j] = true;
+                } else if (j == n) {
+                    dp[i][j] = false;
+                } else {
+                    boolean match = i < m && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.');
+                    if (j + 1 < n && p.charAt(j + 1) == '*') {
+                        dp[i][j] = dp[i][j + 2] || (match && dp[i + 1][j]);
+                    } else if (match) {
+                        dp[i][j] = dp[i + 1][j + 1];
+                    }
+                }
+            }
+        }
+        return dp[0][0];
+    }
 }

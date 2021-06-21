@@ -2,8 +2,6 @@ package Amazon;
 
 import java.util.Arrays;
 
-import java.util.Arrays;
-
 public class MaximumAreaofaPieceofCakeAfterHorizontalandVerticalCuts {
     public int maxArea(int h, int w, int[] horizontalCuts, int[] verticalCuts) {
         Arrays.sort(horizontalCuts);// O(mlogm)

@@ -1,27 +1,35 @@
-public class RandomPickWithWeight {
-    private int[] prefixSums;
-    private int sum;
+import java.util.Random;
 
+public class RandomPickWithWeight {
+    int[] sum;
+    Random random;
     public RandomPickWithWeight(int[] w) {
-        prefixSums = new int[w.length];
-        for (int i = 0; i < w.length; i++) {
-            sum += w[i];
-            prefixSums[i] = sum;
+        random = new Random();
+        sum = new int[w.length];
+        sum[0] = w[0];
+        for (int i = 1; i < w.length; i++) {
+            sum[i] = sum[i - 1] + w[i];
         }
     }
-
+    
     public int pickIndex() {
-        double target = sum * Math.random();
-        // find smallest index st. prefixSums[index] >= target
-        int left = 0, right = prefixSums.length - 1;
-        while (left < right - 1) {
+        int target = random.nextInt(sum[sum.length - 1]) + 1;// [1, sum[end]]
+        return search(target);
+    }
+    
+    // find first index with element >= target
+    private int search(int target) {
+        int left = 0, right = sum.length - 1;
+        int res = 0;
+        while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (prefixSums[mid] < target) {
-                left = mid + 1;
+            if (sum[mid] >= target) {
+                res = mid;
+                right = mid - 1;
             } else {
-                right = mid;
+                left = mid + 1;
             }
         }
-        return prefixSums[left] >= target ? left : right;
+        return res;
     }
 }

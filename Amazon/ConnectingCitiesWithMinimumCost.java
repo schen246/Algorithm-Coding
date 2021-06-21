@@ -2,8 +2,6 @@ package Amazon;
 
 import java.util.Arrays;
 
-import java.util.Arrays;
-
 public class ConnectingCitiesWithMinimumCost {
     // sort as weight
     // union find

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NumberOfMatchingSubsequences {
-    // M1: bf - time: O(s.length * sum(word[i].length)) space: O(1)
+    // M1: bf - time: O(words.length * (S.length + word.length)) space: O(1)
     public int numMatchingSubseq(String S, String[] words) {
         int res = 0;
         for (String word : words) {
@@ -28,7 +28,7 @@ public class NumberOfMatchingSubsequences {
         return i == word.length();
     }
 
-    // M2: one pass - map + queue - time: O(s.length + sum(word[i].length!)) space: O(sum(word[i].length))
+    // M2: one pass - map + queue - time: O(s.length + sum(matched word.length!)) space: O(sum(word.length))
     public int numMatchingSubseq2(String S, String[] words) {
         Map<Character, Deque<String>> map = new HashMap<>();
         for (int i = 0; i < 26; i++) {

@@ -29,28 +29,29 @@ public class FourSumII {
     private int kSum(int[][] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         addMap(nums, map, 0, 0);// O(n^(k/2))
-        return checkAnother(nums, map, nums.length / 2, 0);// O(n^(k/2))
+        int[] res = new int[1];
+        checkAnother(nums, map, nums.length / 2, 0, res);// O(n^(k/2))
+        return res[0];
     }
 
     // recursion - divide and conquer
-    private int checkAnother(int[][] nums, Map<Integer, Integer> map, int i, int sum) {
+    private void checkAnother(int[][] nums, Map<Integer, Integer> map, int i, int sum, int[] res) {
         if (i == nums.length) {
-            return map.getOrDefault(sum, 0);
+            res[0] += map.getOrDefault(sum, 0);
+            return;
         }
-        int res = 0;
         for (int a : nums[i]) {
-            res += checkAnother(nums, map, i + 1, sum - a);
+            checkAnother(nums, map, i + 1, sum - a, res);
         }
-        return res;
     }
 
     private void addMap(int[][] nums, Map<Integer, Integer> map, int i, int sum) {
         if (i == nums.length / 2) {
             map.put(sum, map.getOrDefault(sum, 0) + 1);
-        } else {
-            for (int a : nums[i]) {
-                addMap(nums, map, i + 1, sum + a);
-            }
+            return;
+        }
+        for (int a : nums[i]) {
+            addMap(nums, map, i + 1, sum + a);
         }
     }
 }

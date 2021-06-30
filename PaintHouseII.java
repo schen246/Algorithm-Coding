@@ -12,6 +12,9 @@ public class PaintHouseII {
                     }
                     cur = Math.min(cur, dp[i][k]);
                 }
+                if (cur == Integer.MAX_VALUE) {// there may be costs[0].length = 1
+                    cur = 0;
+                }
                 dp[i + 1][j] = cur + costs[i][j];
             }
         }

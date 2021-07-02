@@ -6,6 +6,14 @@ import java.util.Map;
 import java.util.Queue;
 
 public class CloneGraph {
+    class Node {
+        public int val;
+        List<Node> neighbors = new ArrayList<>();
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+    
     public Node cloneGraph(Node node) {
         // M1: dfs time: O(n) space: O(n)
         if (node == null) {
@@ -45,12 +53,4 @@ public class CloneGraph {
         }
     }
 
-}
-
-class Node {
-    public int val;
-    List<Node> neighbors = new ArrayList<>();
-    public Node(int val) {
-        this.val = val;
-    }
 }

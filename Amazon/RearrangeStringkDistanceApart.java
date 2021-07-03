@@ -36,14 +36,13 @@ public class RearrangeStringkDistanceApart {
             List<Character> list = new ArrayList<>();
             for (int i = 0; i < k; i++) {
                 Item cur = pq.poll();
-                sb.append(cur.letter);
-                list.add(cur.letter);
-                map.put(cur.letter, map.get(cur.letter) - 1);
+                char letter = cur.letter;
+                sb.append(letter);
+                list.add(letter);
+                map.put(letter, map.get(letter) - 1);
                 if (pq.size() == 0) {
-                    if (i != k - 1 && sb.length() != s.length()) {
-                        return "";
-                    }
-                    break;
+                    if (i == k - 1 || sb.length() == s.length()) break;// two valid cases
+                    return "";
                 }
             }
             for (char c : list) {

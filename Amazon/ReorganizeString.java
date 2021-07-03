@@ -54,4 +54,33 @@ public class ReorganizeString {
         }
         return sb.toString();
     }
+
+    // map + pq - time: O(nlogn) space: O(n)
+    public String reorganizeString2(String s) {
+        Map<Character, Integer> map = new HashMap<>();// <letter, cnt>
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        PriorityQueue<Item> pq = new PriorityQueue<>((a, b) -> {
+            if (a.cnt == b.cnt) {
+                return a.letter - b.letter;// small letter first
+            }
+            return b.cnt - a.cnt;// large cnt first
+        });
+        for (char c : map.keySet()) {
+            pq.offer(new Item(c, map.get(c)));
+        }
+        StringBuilder sb = new StringBuilder();
+        Item pre = null;
+        while (pq.size() > 0) {
+            Item cur = pq.poll();
+            if (pre != null && pre.cnt > 0) {
+                pq.offer(pre);
+            }
+            sb.append(cur.letter);
+            cur.cnt--;
+            pre = cur;
+        }
+        return sb.length() == s.length() ? sb.toString() : "";
+    }
 }

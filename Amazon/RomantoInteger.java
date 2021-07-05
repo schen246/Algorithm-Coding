@@ -16,18 +16,16 @@ public class RomantoInteger {
         map.put('M', 1000);
     }
     public int romanToInt(String s) {
-        char lastChar = s.charAt(s.length() - 1);
-        int lastVal = map.get(lastChar);
-        int res = lastVal;
+        char pre = s.charAt(s.length() - 1);
+        int res = map.get(pre);
         for (int i = s.length() - 2; i >= 0; i--) {
-            char curChar = s.charAt(i);
-            int curVal = map.get(curChar);
-            if (curVal < lastVal) {
-                res -= curVal;
+            char cur = s.charAt(i);
+            if (map.get(cur) < map.get(pre)) {
+                res -= map.get(cur);
             } else {
-                res += curVal;
+                res += map.get(cur);
             }
-            lastVal = curVal;
+            pre = cur;
         }
         return res;
     }

@@ -9,28 +9,28 @@ public class PrisonCellsAfterNDays {
         // check cycle
         Set<String> set = new HashSet<>();
         int cnt = 0;
-        boolean hasCycle = false;
-        for (int i = 0; i < n; i++) {
-            int[] next = nextDay(cells);
-            String s = Arrays.toString(next);
-            if (set.add(s)) {
+        boolean found = false;
+        for (int i = 1; i <= n; i++) {// min(n, 2^k) * k
+            int[] next = findNext(cells);
+            String cur = Arrays.toString(next);
+            if (set.add(cur)) {
                 cnt++;
             } else {
-                hasCycle = true;
+                found = true;
                 break;
             }
             cells = next;
         }
-        if (hasCycle) {
-            n %= cnt;
-            for (int i = 0; i < n; i++) {
-                cells = nextDay(cells);
+        if (found) {
+            n %= set.size();
+            for (int i = 1; i <= n; i++) {
+                cells = findNext(cells);
             }
         }
         return cells;
     }
     
-    private int[] nextDay(int[] cells) {
+    private int[] findNext(int[] cells) {// O(k)
         int[] res = new int[cells.length];
         for (int i = 1; i < cells.length - 1; i++) {
             res[i] = cells[i - 1] == cells[i + 1] ? 1 : 0;

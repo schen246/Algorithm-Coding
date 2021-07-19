@@ -129,6 +129,6 @@ public class myHashMap<K, V> {
             return 0;
         }
         int hashNumber = key.hashCode();
-        return hashNumber & 0X7FFFFFFF; // make sure hashNumber non-negative
+        return (hashNumber & 0X7FFFFFFF) % array.length; // make sure hashNumber non-negative
     }
 }

@@ -8,65 +8,59 @@ import java.util.Queue;
 import java.util.Set;
 
 public class AllNodesDistanceKInBinaryTree {
-    public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
-        // assume: tree not empty, unique node, target in tree
+    // bfs build graph + bfs k distance - time: O(n) space: O(n)
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         Map<TreeNode, List<TreeNode>> map = new HashMap<>();
-        buildGraph(map, root);
-        return bfs(map, target, K);
+        buildGraph(root, map);
+        return bfs(root, target, map, k);
     }
-
-    private List<Integer> bfs(Map<TreeNode, List<TreeNode>> map, TreeNode target, int k) {
+    
+    private List<Integer> bfs(TreeNode root, TreeNode target, Map<TreeNode, List<TreeNode>> map, int k) {
         List<Integer> res = new ArrayList<>();
-        if (k == 0) {
-            res.add(target.val);
-            return res;
-        }
         Queue<TreeNode> q = new ArrayDeque<>();
         Set<TreeNode> set = new HashSet<>();
-        q.offer(target);
         set.add(target);
+        q.offer(target);
+        int steps = 0;
         while (q.size() > 0) {
-            int n = q.size();
-            k--;
-            for (int i = 0; i < n; i++) {
-                TreeNode node = q.poll();
-                for (TreeNode nei : map.get(node)) {
+            int size = q.size();
+            if (steps == k) {
+                break;
+            }
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = q.poll();
+                for (TreeNode nei : map.get(cur)) {
                     if (set.add(nei)) {
                         q.offer(nei);
-                        if (k == 0) {
-                            res.add(nei.val);
-                        }
                     }
                 }
             }
-            if (k == 0) {
-                return res;
-            }
+            steps++;
+        }
+        while (q.size() > 0) {
+            res.add(q.poll().val);
         }
         return res;
     }
-
-    private void buildGraph(Map<TreeNode, List<TreeNode>> map, TreeNode root) {
+    
+    private void buildGraph(TreeNode root, Map<TreeNode, List<TreeNode>> map) {
         Queue<TreeNode> q = new ArrayDeque<>();
         q.offer(root);
         map.put(root, new ArrayList<>());
         while (q.size() > 0) {
-            TreeNode node = q.poll();
-            List<TreeNode> cur = map.get(node);
-            if (node.left != null) {
-                q.offer(node.left);
-                cur.add(node.left);
-                map.put(node.left, new ArrayList<>());
-                map.get(node.left).add(node);
+            TreeNode cur = q.poll();
+            if (cur.left != null) {
+                map.get(cur).add(cur.left);
+                q.offer(cur.left);
+                map.put(cur.left, new ArrayList<>());
+                map.get(cur.left).add(cur);
             }
-            if (node.right != null) {
-                q.offer(node.right);
-                cur.add(node.right);
-                map.put(node.right, new ArrayList<>());
-                map.get(node.right).add(node);
+            if (cur.right != null) {
+                map.get(cur).add(cur.right);
+                q.offer(cur.right);
+                map.put(cur.right, new ArrayList<>());
+                map.get(cur.right).add(cur);
             }
         }
     }
-    // two pass bfs
-    // time: O(n) space: O(n)
 }

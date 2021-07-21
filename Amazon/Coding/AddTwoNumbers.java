@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class AddTwoNumbers {
     // time: O(m + n) space: O(1)

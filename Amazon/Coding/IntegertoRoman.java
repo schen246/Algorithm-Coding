@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class IntegertoRoman {
     private static final int[] VALUE = new int[]{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};

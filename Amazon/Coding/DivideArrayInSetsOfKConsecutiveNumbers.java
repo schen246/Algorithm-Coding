@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 import java.util.HashMap;
 import java.util.Map;

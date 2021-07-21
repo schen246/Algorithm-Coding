@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class FindDistanceinaBinaryTree {
     // recursion - time: O(n) space: O(height)

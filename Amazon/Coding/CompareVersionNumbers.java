@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class CompareVersionNumbers {
     // time: O(m + n + max(m, n)) space: O(m + n)

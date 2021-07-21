@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 class ListNode {
     int val;

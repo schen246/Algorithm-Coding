@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class MaximumAverageSubtree {
     // divide and conquer - time: O(n) space: O(height)

@@ -1,4 +1,4 @@
-package Amazon;
+package Amazon.Coding;
 
 public class DesignTicTacToe {
     int[][] board;// space: O(n^2)

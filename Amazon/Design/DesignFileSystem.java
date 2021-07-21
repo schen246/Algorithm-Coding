@@ -7,15 +7,14 @@ public class DesignFileSystem {
     class Node {
         Map<String, Node> children;
         int value;
-        public Node(int value) {
+        public Node() {
             children = new HashMap<>();
-            this.value = value;
         }
     }
     
     Node root;
     public DesignFileSystem() {
-        root = new Node(0);
+        root = new Node();
     }
     
     public boolean createPath(String path, int value) {
@@ -30,7 +29,9 @@ public class DesignFileSystem {
         if (cur.children.containsKey(strs[strs.length - 1])) {
             return false;
         }
-        cur.children.put(strs[strs.length - 1], new Node(value));
+        cur.children.put(strs[strs.length - 1], new Node());
+        cur = cur.children.get(strs[strs.length - 1]);
+        cur.value = value;
         return true;
     }
     

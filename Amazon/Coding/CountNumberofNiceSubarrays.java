@@ -11,6 +11,9 @@ public class CountNumberofNiceSubarrays {
     }
 
     private int helper(int[] nums, int k) {
+        if (k < 0) {
+            return 0;
+        }
         int i = 0, j = 0, cnt = 0, res = 0;
         while (j < nums.length) {
             cnt += (nums[j] & 1);

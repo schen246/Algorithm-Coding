@@ -38,8 +38,22 @@ public class CountNumberofNiceSubarrays {
         return res;
     }
 
-    // M3: two pointers - nums of subarrays with sum == k (convert to 0-1 array)
+    // M3: three pointers - nums of subarrays with sum == k (convert to 0-1 array)
     public int numberOfSubarrays3(int[] nums, int k) {
-
+        int i = 0, j = 0, sum = 0, cnt = 0, res = 0;
+        while (j < nums.length) {
+            if ((nums[j] & 1) == 1) {
+                sum++;
+                cnt = 0;
+            }
+            while (sum == k) {
+                cnt++;
+                sum -= (nums[i] & 1);
+                i++;
+            }
+            res += cnt;
+            j++;
+        }
+        return res;
     }
 }
